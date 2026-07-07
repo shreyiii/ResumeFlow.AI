@@ -27,6 +27,7 @@ const ColorPicker = ({ selectedColor, onChange }) => {
     { name: "Stone", value: "#78716C" },
     { name: "Neutral", value: "#3F3F46" },
     
+    
   
   ];
 

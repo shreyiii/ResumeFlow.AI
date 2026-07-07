@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Layout from './pages/Layout';
-import Preview from './pages/preview';
+import Preview from './pages/Preview';
 import ResumeBuilder from './pages/ResumeBuilder';
 import Login from './pages/Login';
 import api from './api/axios';

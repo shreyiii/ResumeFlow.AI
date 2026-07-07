@@ -18,10 +18,10 @@ import { useSelector } from 'react-redux';
 import api from "../api/axios";
 import toast from 'react-hot-toast';
 
+
 const ResumeBuilder = () => {
   const {resumeId} = useParams();
   const {token}=useSelector((state)=>state.auth);
-  const resumeRef = useRef(null);
   const [resumeData, setResumeData] = useState({
     _id: '',
     title: '',
@@ -140,9 +140,11 @@ const handleShare = async () => {
   }
 };
 
-const downloadResume = () => {
-  window.print();
-};
+const resumeRef = useRef(null);
+
+const handlePrint = useReactToPrint({
+  contentRef: resumeRef,
+});
 
 const saveResume = async () => {
   try {
@@ -362,7 +364,7 @@ const saveResume = async () => {
   )}
 </button>
          <button
-  onClick={downloadResume}
+  onClick={handlePrint}
   className="bg-gray-200 text-gray-800 py-2 px-4 rounded-lg hover:bg-red-300"
 >
   <DownloadIcon className="inline size-4 mr-2" />

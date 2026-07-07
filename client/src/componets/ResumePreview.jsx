@@ -69,35 +69,25 @@ const ResumePreview = ({
           size:A4;
           margin:1cm;
         }
+        
+        @media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
 
-        @media print{
+  body {
+    margin: 0;
+  }
 
-          html,
-          body{
-            width:210mm;
-            height:297mm;
-            margin:0;
-            overflow:hidden;
-          }
+  #resume-preview {
+    width: 100%;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
 
-          body *{
-            visibility:hidden;
-          }
-
-          #resume-preview,
-          #resume-preview *{
-            visibility:visible;
-          }
-
-          #resume-preview{
-            position:absolute;
-            left:0;
-            top:0;
-            width:100%;
-            border:none !important;
-            box-shadow:none !important;
-          }
-        }
+       
       `}
       </style>
     </div>

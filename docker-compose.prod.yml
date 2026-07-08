@@ -1,0 +1,19 @@
+services:
+  server:
+    image: shreyiii/resumeflow-server:latest
+    container_name: resume-server
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./server/.env
+    restart: unless-stopped
+
+  client:
+    image: shreyiii/resumeflow-client:latest
+    container_name: resume-client
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+    restart: unless-stopped
+    

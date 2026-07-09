@@ -88,15 +88,6 @@ const Projects = ({ data, onChange }) => {
                     className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                   />
 
-                  <input
-                    type="text"
-                    placeholder="Project Type"
-                    value={project.type}
-                    onChange={(e) =>
-                      updateProject(index, "type", e.target.value)
-                    }
-                    className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
 
                 </div>
 

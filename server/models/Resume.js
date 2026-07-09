@@ -103,14 +103,10 @@ const ResumeSchema = new mongoose.Schema(
     ],
 
     skills: [
-      {
-        name: String,
-        level: {
-          type: String,
-          
-        },
-      },
-    ],
+  {
+    type: String,
+  },
+],
   },
   {
     timestamps: true,minimize: false

@@ -98,15 +98,6 @@ const Education = ({ data, onChange }) => {
                     className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
                   />
 
-                  <input
-                    type="text"
-                    placeholder="Field of Study"
-                    value={edu.field}
-                    onChange={(e) =>
-                      updateEducation(index, "field", e.target.value)
-                    }
-                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
-                  />
 
                   <input
                     type="month"

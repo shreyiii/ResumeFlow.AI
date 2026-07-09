@@ -1,119 +1,358 @@
-# 🚀 ResumeFlow.AI
+# 🚀 ResumeFlow AI
+ResumeFlow AI v1.0
+> AI-powered Resume Builder with Professional Resume Generation, PDF Export, Secure Authentication, Dockerized Deployment, and Automated CI/CD Pipeline.
 
-An AI-powered full-stack MERN Resume Builder that helps users create ATS-friendly resumes with modern templates, AI-assisted content generation, image uploads, and PDF export.
-
----
-
-## ✨ Features
-
-- 🔐 Secure User Authentication (JWT)
-- 🤖 AI-assisted Resume Generation
-- 📄 ATS-Friendly Resume Templates
-- 👀 Live Resume Preview
-- 📥 PDF Download
-- 🖼️ Profile Image Upload (Cloudinary/ImageKit)
-- 🎨 Resume Color Customization
-- 📱 Responsive UI
-- 📂 Resume CRUD Operations
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![React](https://img.shields.io/badge/React-19-blue)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-success)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED)
+![AWS](https://img.shields.io/badge/AWS-EC2-orange)
+![GitHub Actions](https://img.shields.io/badge/CI/CD-GitHub%20Actions-blue)
 
 ---
 
-## 🛠 Tech Stack
+## 🌐 Live Demo
 
-### Frontend
+🔗 https://resumeflow-ai.duckdns.org
+
+---
+
+## 📂 GitHub Repository
+
+https://github.com/shreyiii/ResumeFlow.AI
+
+---
+
+# 📖 Overview
+
+ResumeFlow AI is a modern AI-powered resume builder that enables users to create, edit, manage, and export professional resumes with ease.
+
+The platform leverages AI to generate professional summaries and improve resume content while providing secure authentication, responsive design, and production-ready cloud deployment.
+
+---
+
+# ✨ Features
+
+### 👤 Authentication
+
+- Secure JWT Authentication
+- Login & Registration
+- Protected Routes
+
+### 📄 Resume Builder
+
+- Create Multiple Resumes
+- Edit Resume Sections
+- Professional Summary
+- Education
+- Experience
+- Skills
+- Projects
+- Personal Information
+
+### 🤖 AI Features
+
+- AI Professional Summary
+- AI Resume Enhancement
+- AI Content Generation
+
+### 📑 Export
+
+- High Quality PDF Download
+- Printable Resume
+
+### 🎨 UI
+
+- Responsive Design
+- Modern Interface
+- Multiple Resume Sections
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
 - React.js
+- Vite
 - Tailwind CSS
 - Axios
-- React Router
 
-### Backend
+## Backend
+
 - Node.js
 - Express.js
+- JWT Authentication
 
-### Database
-- MongoDB
+## Database
 
-### Authentication
-- JWT
+- MongoDB Atlas
+- Mongoose
 
-### Media Storage
-- ImageKit / Cloudinary
+## AI
+
+- Gemini API
+
+## DevOps
+
+- Docker
+- Docker Compose
+- Nginx
+- AWS EC2
+- GitHub Actions
+- Let's Encrypt SSL
 
 ---
 
-## 📂 Project Structure
+# 🏗 Architecture
 
-ResumeFlow.AI/
+```
+                GitHub
+                   │
+                   ▼
+          GitHub Actions (CI/CD)
+                   │
+                   ▼
+              Docker Hub
+                   │
+                   ▼
+               AWS EC2
+                   │
+        ┌──────────┴──────────┐
+        │                     │
+   Nginx Reverse Proxy     Docker
+        │                     │
+        ▼                     ▼
+   React Frontend      Node.js Backend
+                              │
+                              ▼
+                       MongoDB Atlas
+```
+
+---
+
+# 📁 Project Structure
+
+```
+ResumeFlow.AI
 │
-├── client/
-│ ├── src/
-│ ├── public/
-│ └── package.json
+├── client
+│   ├── src
+│   ├── public
+│   └── Dockerfile
 │
-├── server/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── middlewares/
-│ └── server.js
+├── server
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── middleware
+│   └── Dockerfile
 │
+├── .github
+│   └── workflows
+│
+├── docker-compose.yml
+├── docker-compose.prod.yml
 └── README.md
+```
 
 ---
 
-## ⚙️ Installation
+# 🚀 Installation
 
-### Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/shreyiii/ResumeFlow.AI.git
+
+cd ResumeFlow.AI
 ```
 
-### Install Frontend
+---
+
+## Install Dependencies
+
+### Client
 
 ```bash
 cd client
+
 npm install
-npm run dev
 ```
 
-### Install Backend
+### Server
 
 ```bash
-cd server
+cd ../server
+
 npm install
-npm run dev
 ```
 
 ---
 
-## 🔑 Environment Variables
+## Environment Variables
 
-Create `.env` inside server folder.
+### Server (.env)
 
+```env
+PORT=5000
+
+MONGODB_URI=YOUR_MONGODB_URI
+
+JWT_SECRET=YOUR_SECRET
+
+GEMINI_API_KEY=YOUR_API_KEY
 ```
-MONGODB_URI=
-JWT_SECRET=
-IMAGEKIT_PUBLIC_KEY=
-IMAGEKIT_PRIVATE_KEY=
-IMAGEKIT_URL_ENDPOINT=
-```
 
+### Client (.env)
+
+```env
+VITE_BASE_URL=http://localhost:5000
+```
 
 ---
 
-## 👨‍💻 Author
+# ▶ Run Locally
 
-Shrey Srivastava
+```bash
+docker compose up --build
+```
 
-LinkedIn:
-https://in.linkedin.com/in/shrey-srivastava27
+---
 
-GitHub:
+# 🐳 Docker
+
+Build
+
+```bash
+docker compose build
+```
+
+Run
+
+```bash
+docker compose up -d
+```
+
+Stop
+
+```bash
+docker compose down
+```
+
+---
+
+# ☁ Deployment
+
+Application is deployed using
+
+- Docker
+- AWS EC2
+- Nginx Reverse Proxy
+- GitHub Actions CI/CD
+- Let's Encrypt SSL
+- DuckDNS
+
+Deployment becomes automatic after every push to the **main** branch.
+
+```
+git push origin main
+        │
+        ▼
+ GitHub Actions
+        │
+        ▼
+ Docker Build
+        │
+        ▼
+ Docker Hub
+        │
+        ▼
+ AWS EC2 Auto Deploy
+```
+
+---
+
+# 🔐 Security
+
+- JWT Authentication
+- Protected API Routes
+- HTTPS using Let's Encrypt
+- Nginx Reverse Proxy
+
+---
+
+# 📸 Screenshots
+
+> Add screenshots here
+
+- Home Page
+
+- Dashboard
+
+- Resume Builder
+
+- AI Summary
+
+- PDF Export
+
+---
+
+# 📈 Future Improvements
+
+- Google Authentication
+
+- ATS Score Analysis
+
+- Resume Templates
+
+- Resume Sharing
+
+- Portfolio Generator
+
+- Resume Analytics
+
+- Email Verification
+
+- Password Reset
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+Feel free to fork this repository and submit pull requests.
+
+---
+
+# 👨‍💻 Author
+
+**Shrey Srivastava**
+
+GitHub
+
 https://github.com/shreyiii
 
+LinkedIn
+
+https://linkedin.com/in/shrey-srivastava27
+
+Email
+
+srivastavashrey56@gmail.com
+
 ---
 
-## ⭐ If you like this project
+# ⭐ Support
 
-Give it a ⭐ on GitHub.
+If you found this project useful,
+
+please consider giving it a ⭐ on GitHub.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.

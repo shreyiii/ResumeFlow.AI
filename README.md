@@ -282,23 +282,6 @@ git push origin main
 - Nginx Reverse Proxy
 
 ---
-
-# 📸 Screenshots
-
-> Add screenshots here
-
-- Home Page
-
-- Dashboard
-
-- Resume Builder
-
-- AI Summary
-
-- PDF Export
-
----
-
 # 📈 Future Improvements
 
 - Google Authentication

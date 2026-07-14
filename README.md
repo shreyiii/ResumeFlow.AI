@@ -15,6 +15,7 @@ ResumeFlow AI v1.0
 ## 🌐 Live Demo
 
 🔗 https://resumeflow-ai.duckdns.org
+🟢https://resume-flow-ai-psi.vercel.app/app
 
 ---
 
